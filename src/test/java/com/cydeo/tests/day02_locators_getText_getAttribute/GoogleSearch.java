@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GoogleSearch {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -28,6 +28,7 @@ public class GoogleSearch {
         }else
             throw new RuntimeException("error, title failed");
 
+        Thread.sleep(5000);
         driver.close();
     }
 }
