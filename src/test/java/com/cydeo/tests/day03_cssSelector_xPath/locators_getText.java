@@ -8,15 +8,17 @@ import static com.cydeo.tests.utilities.WebDriverFactory.getDriver;
 
 public class locators_getText {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        WebDriver driver = getDriver("firefox");
+        WebDriver driver = getDriver("chrome");
         driver.manage().window().maximize();
 
         driver.get("https://login1.nextbasecrm.com");
 
         WebElement inputUsername= driver.findElement(By.className("login-inp"));
         inputUsername.sendKeys("incorrect");
+
+        Thread.sleep(2000);
 
         WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
         inputPassword.sendKeys("incorrect");
@@ -26,6 +28,7 @@ public class locators_getText {
 
         String expectedIncorrectMessage = "Incorrect login or password";
         WebElement incorrectMessage = driver.findElement(By.className("errortext"));
+
         if (incorrectMessage.getText().equals(expectedIncorrectMessage)){
             System.out.println("passed");
         }else
