@@ -1,7 +1,9 @@
 package com.cydeo.tests.day7_webtables_utilities_javafaker;
 
 import com.cydeo.tests.utilities.WebDriverFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -16,8 +18,12 @@ public class Task1 {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.amazon.com");
 
+        ((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
 
-
+        com.cydeo.utilities.BrowserUtils.switchWindowAndVerify(driver, "etsy",
+                "Etsy Albania - Shop for handmade, vintage, custom, and unique gifts for everyone");
 
     }
 }
