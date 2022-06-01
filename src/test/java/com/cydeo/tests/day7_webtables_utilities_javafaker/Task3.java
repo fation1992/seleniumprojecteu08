@@ -11,16 +11,20 @@ import java.util.concurrent.TimeUnit;
 
 public class Task3 {
 
+    WebDriver driver;
+    @BeforeClass
+    public void SetUp(){
 
+        driver= WebDriverFactory.getDriver("chrome");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
 
 
     @Test
     public void loginTest(){
-        WebDriver driver=
-        WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.get("http://login1.nextbasecrm.com/");
 
         driver.findElement(By.xpath("//input[@name='USER_LOGIN']")).sendKeys("helpdesk1@cybertekschool.com");

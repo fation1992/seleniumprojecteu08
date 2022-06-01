@@ -11,16 +11,20 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase5 {
 
+    WebDriver webDriver;
 
+    @BeforeClass
+    public void SetUp(){
+        webDriver=WebDriverFactory.getDriver("chrome");
+        webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
+    }
 
     @Test
     public void Test1(){
 
-        WebDriver webDriver=WebDriverFactory.getDriver("chrome");
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
         webDriver.get("https://practice.cydeo.com/windows");
 
