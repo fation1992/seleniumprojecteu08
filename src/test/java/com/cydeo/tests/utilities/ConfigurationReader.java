@@ -23,6 +23,9 @@ public class ConfigurationReader {
             throw new RuntimeException(e);
         }
 
+    }
 
+    public static String getProperty(String keyword) {
+        return properties.getProperty(keyword);
     }
 }
