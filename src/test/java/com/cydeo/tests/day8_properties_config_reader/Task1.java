@@ -1,6 +1,7 @@
 package com.cydeo.tests.day8_properties_config_reader;
 
 import com.cydeo.tests.utilities.WebDriverFactory;
+import com.cydeo.tests.utilities.WebTableUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,8 +44,18 @@ public class Task1 {
 
 
     }
+    @Test
+    public void Testing2(){
 
+        String dateOfNedStark = WebTableUtils.returnOrderDate(driver,"Ned Stark");
+        System.out.println(dateOfNedStark);
+    }
 
+    @Test
+    public void Testing3(){
+
+        WebTableUtils.orderVerify(driver, "Bart Fisher", "01/16/2021");
+    }
 }
 /*
 TC #1: Web table practice
