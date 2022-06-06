@@ -30,7 +30,7 @@ public class Task1 {
         ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
 
-        com.cydeo.utilities.BrowserUtils.switchWindowAndVerify(driver, "etsy",
+        com.cydeo.tests.utilities.BrowserUtils.switchWindowAndVerify(driver, "etsy",
                 "Etsy Albania - Shop for handmade, vintage, custom, and unique gifts for everyone");
 
     }

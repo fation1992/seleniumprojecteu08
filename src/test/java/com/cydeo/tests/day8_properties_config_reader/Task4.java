@@ -35,7 +35,7 @@ public class Task4 {
 
 
 
-        com.cydeo.utilities.BrowserUtils.verifyTitle(driver,expectedTitle);
+        com.cydeo.tests.utilities.BrowserUtils.verifyTitle(driver,expectedTitle);
     }
 
 

@@ -32,7 +32,7 @@ public class Task3 {
 
         driver.findElement(By.xpath("//input[@class='login-btn']")).click();
 
-        com.cydeo.utilities.BrowserUtils.verifyTitle(driver,"Portal");
+        com.cydeo.tests.utilities.BrowserUtils.verifyTitle(driver,"Portal");
     }
 
 }
