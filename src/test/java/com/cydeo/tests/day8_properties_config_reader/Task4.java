@@ -1,7 +1,8 @@
 package com.cydeo.tests.day8_properties_config_reader;
 
-import com.cydeo.tests.utilities.ConfigurationReader;
-import com.cydeo.tests.utilities.WebDriverFactory;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class Task4 {
@@ -35,7 +34,7 @@ public class Task4 {
 
 
 
-        com.cydeo.tests.utilities.BrowserUtils.verifyTitle(driver,expectedTitle);
+        BrowserUtils.verifyTitle(driver,expectedTitle);
     }
 
 

@@ -1,9 +1,9 @@
 package com.cydeo.tests.day7_webtables_utilities_javafaker;
 
-import com.cydeo.tests.utilities.WebDriverFactory;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -30,7 +30,7 @@ public class Task1 {
         ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
 
-        com.cydeo.tests.utilities.BrowserUtils.switchWindowAndVerify(driver, "etsy",
+        BrowserUtils.switchWindowAndVerify(driver, "etsy",
                 "Etsy Albania - Shop for handmade, vintage, custom, and unique gifts for everyone");
 
     }
